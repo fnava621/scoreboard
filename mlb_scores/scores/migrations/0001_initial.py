@@ -14,8 +14,8 @@ class Migration(SchemaMigration):
             ('game_date', self.gf('django.db.models.fields.DateField')()),
             ('game_id', self.gf('django.db.models.fields.CharField')(max_length=12)),
             ('espn_id', self.gf('django.db.models.fields.CharField')(max_length=9)),
-            ('start_time_pdt', self.gf('django.db.models.fields.TimeField')(null=True)),
-            ('start_time_local', self.gf('django.db.models.fields.TimeField')(null=True)),
+            ('start_time_pdt', self.gf('django.db.models.fields.FloatField')(null=True, blank=True)),
+            ('start_time_local', self.gf('django.db.models.fields.FloatField')(null=True, blank=True)),
             ('away', self.gf('django.db.models.fields.CharField')(max_length=3)),
             ('home', self.gf('django.db.models.fields.CharField')(max_length=3)),
             ('interleague', self.gf('django.db.models.fields.IntegerField')()),
@@ -50,8 +50,8 @@ class Migration(SchemaMigration):
             'home_runs_5i': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'interleague': ('django.db.models.fields.IntegerField', [], {}),
-            'start_time_local': ('django.db.models.fields.TimeField', [], {'null': 'True'}),
-            'start_time_pdt': ('django.db.models.fields.TimeField', [], {'null': 'True'})
+            'start_time_local': ('django.db.models.fields.FloatField', [], {'null': 'True', 'blank': 'True'}),
+            'start_time_pdt': ('django.db.models.fields.FloatField', [], {'null': 'True', 'blank': 'True'})
         }
     }
 

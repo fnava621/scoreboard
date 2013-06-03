@@ -7,8 +7,8 @@ class GamesSchedule(models.Model):
     game_date = models.DateField()
     game_id = models.CharField(max_length=12)
     espn_id = models.CharField(max_length=9)
-    start_time_pdt = models.TimeField(null=True)
-    start_time_local = models.TimeField(null=True)
+    start_time_pdt = models.FloatField(blank=True, null=True) #Needs to be Float (timedelta)
+    start_time_local = models.FloatField(blank=True, null=True) #Needs to be Float (timedelta)
     away = models.CharField(max_length=3)
     home = models.CharField(max_length=3)
     interleague = models.IntegerField()
@@ -18,7 +18,6 @@ class GamesSchedule(models.Model):
     home_runs_5i = models.IntegerField(null=True, blank=True)
     game_num = models.IntegerField(null=True, blank=True)
     game_status = models.CharField(max_length=16, null=True)
-    
 
 
 #CREATE TABLE games_schedule (
