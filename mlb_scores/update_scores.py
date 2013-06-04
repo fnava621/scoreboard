@@ -1,4 +1,4 @@
-import requests, datetime
+import requests, datetime, os
 from bs4 import BeautifulSoup
 from scores.models import GamesSchedule
 
