@@ -49,4 +49,5 @@ def update_mlb_scores():
             game.save()
 
 if __name__ == '__main__':
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mlb_scores.settings.production")
     update_mlb_scores()
