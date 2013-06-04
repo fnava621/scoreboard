@@ -57,6 +57,9 @@ def date_games_info(request, date):
         jayson = simplejson.dumps(data)
         return HttpResponse(jayson, mimetype='application/json')
     else:
+        try:
         game_date = games_for_date.strftime('%Y-%m-%d')
+        except:
+            return Error_Response
         return HttpResponse("No Games are available for %s" % game_date)
 
