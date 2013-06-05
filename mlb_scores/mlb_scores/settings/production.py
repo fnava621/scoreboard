@@ -5,6 +5,10 @@ from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
 
+DEBUG = True
+
+TEMPLATE_DEBUG = DEBUG
+
 
 
 
