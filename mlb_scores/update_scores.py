@@ -40,15 +40,20 @@ def update_mlb_scores():
         if current_inning:
             print current_inning
 
-        if current_inning:
+        if current_inning or 'Final' in status:
             away_score = int(soup.find(id=(espn_game_id + '-alshT')).text)
             home_score = int(soup.find(id=(espn_game_id + '-hlshT')).text)
-            game.away_runs = away_score
-            game.home_runs = home_score
-            game.game_status = status
+
+            if game.away_runs != away_score\
+                    or game.home_runs != home_score\
+                    or game.game_status != status:
+                game.away_runs = away_score
+                game.home_runs = home_score
+                game.game_status = status
+                game.save()
+
             print away_score
             print home_score
-            game.save()
 
 if __name__ == '__main__':
     update_mlb_scores()
