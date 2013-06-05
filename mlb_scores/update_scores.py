@@ -2,6 +2,7 @@ import requests, datetime, os
 from bs4 import BeautifulSoup
 from scores.models import GamesSchedule
 
+
 def is_number(num):
     try:
         float(num)
@@ -49,5 +50,4 @@ def update_mlb_scores():
             game.save()
 
 if __name__ == '__main__':
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mlb_scores.settings.production")
     update_mlb_scores()
