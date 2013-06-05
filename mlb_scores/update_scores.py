@@ -36,6 +36,7 @@ def update_mlb_scores():
 
         if status:
             print status
+
         if current_inning:
             print current_inning
 
