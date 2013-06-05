@@ -4,7 +4,7 @@ from urlparse import urlparse
 from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
-ALLOWED_HOST = ['.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 DEBUG = False
 
